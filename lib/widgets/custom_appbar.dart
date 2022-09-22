@@ -16,19 +16,22 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       elevation: 0,
       title: Container(
         color: Colors.black,
-        child: Text(
-          'Jarmenke',
-          style: TextStyle(
-            color: Colors.white,
-            fontFamily: 'Avenir',
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        // ignore: sort_child_properties_last
+        child: Text(title,
+            style: Theme.of(context)
+                .textTheme
+                .headline4!
+                .copyWith(color: Colors.white)),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       ),
       iconTheme: IconThemeData(color: Colors.black),
-      actions: [IconButton(onPressed: () {}, icon: Icon(Icons.favorite))],
+      actions: [
+        IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/whishlist');
+            },
+            icon: Icon(Icons.favorite))
+      ],
     );
   }
 
