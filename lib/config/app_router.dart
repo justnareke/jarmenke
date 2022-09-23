@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jarmenke/models/category_model.dart';
 import 'package:jarmenke/screens/home/home_screen.dart';
 
 import '../screens/cart/cart_screen.dart';
@@ -22,7 +23,7 @@ class AppRouter {
       case WhishlistScreen.routeName:
         return WhishlistScreen.route();
       case CatalogScreen.routeName:
-        return CatalogScreen.route();
+        return CatalogScreen.route(category: settings.arguments as Category);
 
       default:
         return _errorRoute();
